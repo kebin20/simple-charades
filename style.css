@@ -1,0 +1,78 @@
+html, 
+body { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #caf0f8;
+}
+
+
+.container { 
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header>h1 {
+    font-family: 'Modak', cursive;
+    font-size: 5rem;
+    color: #f77f00
+  }
+  
+  .display-img {
+    border: 1px solid black;
+    width:  900px;
+    height: 500px;
+    display: block;
+    margin-top: 0.2em;
+  }
+  
+  .btn-col-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1em;
+  }
+  
+  .btn-col-2 {
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .skip-box, .correct-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 1em;
+    background-color: white;
+    height: 70px;
+    width: 70px;
+    margin: 1.5em;
+  }
+  
+  span {
+    font-size: 2rem;;
+  }
+  
+  #skip-btn {
+    margin-left: 3em;
+  }
+  
+  #skip-btn:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
+  
+  #chooseRounds {
+    margin: 1em;
+  }
+  
+  #chooseRounds > p {
+    margin-bottom: 1em;
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charades Image Randomiser</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet"> 
+</head>
+  
+<body>
+  <div class="container is-fluid">
+  <header>
+    <h1>Charades!</h1>
+   </header>
+  <main>
+    <img src="" class="display-img">
+    <div class="btn-col-1">
+    <button id ="next-btn" class= "button is-medium is-responsive is-rounded is-info">Next</button>
+    <button id ="reset-btn" class= "button is-medium is-responsive is-link is-rounded">Reset</button>
+      </div>
+      <div class="btn-col-2">
+    <button id ="correct-btn" class= "button is-medium is-responsive is-primary is-success is-rounded">Correct!</button>
+    <div class="correct-box">
+        <span class="correct-ctr"></span>
+      </div>
+    <button id ="skip-btn" class= "button is-medium is-responsive is-primary is-danger is-rounded">Skip</button>
+        <div class="skip-box">
+        <span class="skip-ctr"></span>
+          </div>
+       <div id="chooseRounds">
+        <p>Max Skips:</p>
+        <div class="select is-rounded">
+            <select name="rounds" id="max-skips">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+    </div>
+      </div>
+    
+  </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
