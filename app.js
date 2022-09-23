@@ -17,42 +17,7 @@ const correctCtr = document.querySelector(".correct-ctr");
 const skipCtr = document.querySelector(".skip-ctr");
 const image = document.querySelector("img");
 
-// To randomise images
-let imgArray = [
-  "img-01.png",
-  "img-02.png",
-  "img-03.png",
-  "img-04.png",
-  "img-05.png",
-  "img-06.png",
-  "img-07.png",
-  "img-08.png",
-  "img-09.png",
-  "img-10.png",
-  "img-11.png",
-  "img-12.png",
-  "img-13.png",
-  "img-14.png",
-  "img-15.png",
-  "img-16.png",
-  "img-17.png",
-  "img-18.png",
-  "img-19.png",
-  "img-20.png",
-  "img-21.png",
-  "img-22.png",
-  "img-23.png",
-  "img-24.png",
-  "img-25.png",
-  "img-26.png",
-  "img-27.png",
-  "img-28.png",
-  "img-29.png",
-  "img-30.png",
-  "img-31.png",
-  "img-32.png",
-];
-
+// 1st solution
 // let basePath = "img/";
 
 // function imgRandom() {
@@ -63,12 +28,67 @@ let imgArray = [
 //   displayImg.appendChild(image);
 // }
 
-window.onload = () => imgRandom(imgArray);
+// 2nd solution
+// To randomise images
+// let imgArray = [
+//   "img-01.png",
+//   "img-02.png",
+//   "img-03.png",
+//   "img-04.png",
+//   "img-05.png",
+//   "img-06.png",
+//   "img-07.png",
+//   "img-08.png",
+//   "img-09.png",
+//   "img-10.png",
+//   "img-11.png",
+//   "img-12.png",
+//   "img-13.png",
+//   "img-14.png",
+//   "img-15.png",
+//   "img-16.png",
+//   "img-17.png",
+//   "img-18.png",
+//   "img-19.png",
+//   "img-20.png",
+//   "img-21.png",
+//   "img-22.png",
+//   "img-23.png",
+//   "img-24.png",
+//   "img-25.png",
+//   "img-26.png",
+//   "img-27.png",
+//   "img-28.png",
+//   "img-29.png",
+//   "img-30.png",
+//   "img-31.png",
+//   "img-32.png",
+// ];
 
-function imgRandom(array) {
-  let randomNum = Math.floor(Math.random() * array.length);
-  image.setAttribute("src", `img/${imgArray[randomNum]}`);
-  console.log(randomNum);
+// window.onload = () => imgRandom(imgArray);
+
+// function imgRandom(array) {
+//   let randomNum = Math.floor(Math.random() * array.length);
+//   image.setAttribute("src", `img/${imgArray[randomNum]}`);
+//   console.log(randomNum);
+// }
+// nextBtn.addEventListener("click", () => imgRandom(imgArray));
+
+// 3rd solution
+window.onload = () => getImages();
+
+function getRandomImgArray() {
+  return new Array(32).fill(0).map(() => {
+    return Math.floor(Math.random() * 32) + 1;
+  });
+}
+
+function getImages() {
+  return getRandomImgArray().map((number) => {
+    return (document.getElementById(
+      "img-display"
+    ).innerHTML = `<img src="img/img-${number}.png" class="display-img">`);
+  });
 }
 
 function reset() {
@@ -80,7 +100,7 @@ function reset() {
 }
 
 //Button and counter functions
-nextBtn.addEventListener("click", () => imgRandom(imgArray));
+nextBtn.addEventListener("click", () => getImages());
 
 resetBtn.addEventListener("click", reset);
 
