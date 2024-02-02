@@ -2,7 +2,7 @@
 let correctAmt = 0;
 let skipAmt = 0;
 let MaxSkip = 0;
-let images = initializeImages();
+const images = initializeImages();
 let index = 0;
 
 // HTML Components
@@ -17,7 +17,6 @@ const maxSkips = document.querySelector("#max-skips");
 // Displays
 const correctCtr = document.querySelector(".correct-ctr");
 const skipCtr = document.querySelector(".skip-ctr");
-const image = document.querySelector("img");
 
 window.onload = () =>
   (document.getElementById("img-display").innerHTML = images[0]);
@@ -26,7 +25,7 @@ function initializeImages() {
   return (
     new Array(32)
       .fill(0)
-      //The value in this .map()  is at 0, but the index (the array number) is always different, therefore we target this index part and randomise this part.
+      // The value in this .map()  is at 0, but the index (the array number) is always different, therefore we target this index part and randomise this part.
       .map((value, index) => {
         return index + 1;
       })
@@ -57,7 +56,7 @@ function reset() {
   skipBtn.disabled = false;
 }
 
-//Button and counter functions
+// Button and counter functions
 nextBtn.addEventListener("click", () => nextImage());
 
 resetBtn.addEventListener("click", reset);
